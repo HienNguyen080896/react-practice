@@ -20,6 +20,7 @@ class CompareProduct extends Component {
         {!this.state.isCollapse && productCompare.map(product => (
           <div key={product.name} className="col-3">
             <CardProduct product={product} />
+            
           </div>
         ))}
       </div>
