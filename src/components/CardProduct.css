@@ -1,0 +1,6 @@
+.card-product:hover .btn-compare{
+   visibility: visible;
+}
+.btn-compare {
+    visibility: hidden;
+}
