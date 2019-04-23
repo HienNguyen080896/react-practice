@@ -3,18 +3,18 @@ import "./style.css";
 import "./CardProduct.css";
 
 class CardProduct extends Component {
-
   render() {
     const { product, onClickCompare } = this.props;
+    
     return (
       <div className="card card-product">
         <img style={{ height: 300 }} src={product.image} />
 
         <div
           className="card-body"
-          style={{ textAlign: "left", padding: 10, height: 238 }}>
-          <h5 className="card-title">{product.name}</h5>
-          <p className="card-text">{product.description}</p>
+          style={{ textAlign: "left", padding: 10, height: 150 }}>
+          <h6 className="card-title">{product.name}</h6>
+          <div className="card-text">{product.description}</div>
           <div className="rating">
             <span>☆</span>
             <span>☆</span>
@@ -22,14 +22,21 @@ class CardProduct extends Component {
             <span>☆</span>
             <span>☆</span>
           </div>
-          <p style={{ color: "red" }}>Price: {product.price_discount}$</p>
+          <div style={{ color: "red" }}>Price: {product.price_discount}$</div>
           {product.price ? (
-            <p style={{ textDecoration: "line-through" }}>
+            <div style={{ textDecoration: "line-through" }}>
               {" "}
               Price: {product.price}$
-            </p>
+            </div>
           ) : null}
-          <button onClick={() => onClickCompare(product)} className="btn btn-primary btn-compare">Compare</button>
+          
+          <div class="overlay"></div>
+          
+          <button
+            onClick={() => onClickCompare && onClickCompare(product)}
+            className="btn btn-primary btn-compare button">
+             {product.is_compare ? "Remove" : "Compare"}
+          </button>
         </div>
       </div>
     );

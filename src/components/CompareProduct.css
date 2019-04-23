@@ -3,3 +3,7 @@
     right: 10px;
     color: red;
 }
+.btn-compare-detail {
+    width: -webkit-fill-available;
+    height: 40px;
+}
